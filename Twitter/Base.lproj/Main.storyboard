@@ -59,13 +59,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xHF-nX-ngw">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="120" id="xHF-nX-ngw" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xHF-nX-ngw" id="FuY-X9-rTr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eyf-33-SC2">
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="65" id="5AH-1z-3Sf"/>
+                                                <constraint firstAttribute="width" constant="65" id="fgx-Lb-YYn"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaU-4h-r9C">
+                                            <rect key="frame" x="73" y="0.0" width="73" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SS-1E-fUV">
+                                            <rect key="frame" x="73" y="24.5" width="286" height="84.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8SS-1E-fUV" firstAttribute="trailing" secondItem="FuY-X9-rTr" secondAttribute="trailingMargin" id="0Zo-jW-Y51"/>
+                                        <constraint firstItem="RaU-4h-r9C" firstAttribute="top" secondItem="FuY-X9-rTr" secondAttribute="top" id="6vK-R3-d1n"/>
+                                        <constraint firstItem="eyf-33-SC2" firstAttribute="top" secondItem="FuY-X9-rTr" secondAttribute="top" id="fNm-Ky-nQM"/>
+                                        <constraint firstItem="eyf-33-SC2" firstAttribute="leading" secondItem="FuY-X9-rTr" secondAttribute="leading" id="kYg-JV-Uo8"/>
+                                        <constraint firstItem="8SS-1E-fUV" firstAttribute="top" secondItem="RaU-4h-r9C" secondAttribute="bottom" constant="4" id="n3E-EJ-C3V"/>
+                                        <constraint firstItem="8SS-1E-fUV" firstAttribute="leading" secondItem="eyf-33-SC2" secondAttribute="trailing" constant="8" id="vyE-sq-zQv"/>
+                                        <constraint firstItem="RaU-4h-r9C" firstAttribute="leading" secondItem="eyf-33-SC2" secondAttribute="trailing" constant="8" id="xe0-Hu-DDb"/>
+                                        <constraint firstItem="8SS-1E-fUV" firstAttribute="bottom" secondItem="FuY-X9-rTr" secondAttribute="bottomMargin" id="zJh-uP-7CU"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profileImageView" destination="eyf-33-SC2" id="aWL-tL-irl"/>
+                                    <outlet property="tweetContent" destination="8SS-1E-fUV" id="k5a-Rb-1tk"/>
+                                    <outlet property="userNameLabel" destination="RaU-4h-r9C" id="nwW-ye-RXM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -84,7 +120,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Y8-Ah-mwZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="-612"/>
+            <point key="canvasLocation" x="408.80000000000001" y="-612.14392803598207"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gro-es-A1v">
