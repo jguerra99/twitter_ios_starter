@@ -12,11 +12,13 @@ class HomeTableViewController: UITableViewController {
     
     var tweetArray = [NSDictionary]()
     var numberofTweet: Int!
+    var screenName:String!
 let myRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTweets()
+        loadprofile()
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
     }
@@ -87,6 +89,10 @@ let myRefreshControl = UIRefreshControl()
         cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         
         return cell
+    }
+    func loadprofile(){
+            
+        
     }
     // MARK: - Table view data source
 

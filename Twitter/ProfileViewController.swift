@@ -10,17 +10,32 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+
+    @IBOutlet weak var backdropView: UIImageView!
+    @IBOutlet weak var profileView: UIImageView!
+    
+    @IBOutlet weak var username: UILabel!
     @IBOutlet weak var HomeButton: UIBarButtonItem!
+    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+      
+      
     
+    }
     @IBAction func HomeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+  
+
+        
+            
+           
+            }
+
+   
+
     /*
     // MARK: - Navigation
 
@@ -31,4 +46,5 @@ class ProfileViewController: UIViewController {
     }
     */
 
-}
+
+
