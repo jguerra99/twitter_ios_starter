@@ -11,8 +11,8 @@ import UIKit
 class HomeTableViewController: UITableViewController {
     
     var tweetArray = [NSDictionary]()
+   var profiles = NSDictionary()
     var numberofTweet: Int!
-    var screenName:String!
 let myRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -90,9 +90,26 @@ let myRefreshControl = UIRefreshControl()
         
         return cell
     }
-    func loadprofile(){
-            
-        
+   func loadprofile(){
+
+                let myUrl = "https://api.twitter.com/1.1/account/verify_credentials.json"
+        let myParams = ["include_entities": true]
+    TwitterAPICaller.client?.getDictionaryRequest(url: myUrl, parameters: myParams, success: { (NSDictionary) in
+        self.profiles = NSDictionary
+       
+                }, failure: { (Error) in
+                    print("Could not retrieve profile")
+                })
+
+
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        let destin = segue.destination as! ProfileViewController
+        destin.profile = profiles
+       
+       
+//        userNameLabel.text = user["name"] as? String
     }
     // MARK: - Table view data source
 

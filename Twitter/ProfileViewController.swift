@@ -8,28 +8,57 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController{
+  
+    
 
-
+    var tweetArray = [NSDictionary]()
+    var numberofTweet: Int!
+let myRefreshControl = UIRefreshControl()
+    var profile = NSDictionary()
+   
     @IBOutlet weak var backdropView: UIImageView!
-    @IBOutlet weak var profileView: UIImageView!
     
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var HomeButton: UIBarButtonItem!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var tabcontrol: UISegmentedControl!
     
- 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-      
-    
+
+        usernameLabel.text = profile["screen_name"] as? String
+        let imageURL = URL(string: (profile["profile_image_url_https"] as? String)!)
+            let data = try? Data(contentsOf: imageURL!)
+            
+            if let imageData = data{
+                profileImageView.image = UIImage(data: imageData)
+            
+            }
+        let backimageURL = URL(string: (profile["profile_banner_url"] as? String)!)
+            let data1 = try? Data(contentsOf: backimageURL!)
+            
+            if let backimageData = data1{
+                backdropView.image = UIImage(data: backimageData)
+            
+            }
+        
+//    print(profile)
+        
+
     }
+
+    
+    
+    
+    
+
     @IBAction func HomeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
   
-
-        
+    
             
            
             }

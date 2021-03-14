@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LgV-4n-hYe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LgV-4n-hYe">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -147,7 +147,7 @@
                             </barButtonItem>
                             <barButtonItem image="account-icon" id="TwX-Kk-Gvx">
                                 <connections>
-                                    <segue destination="xrw-LF-HR7" kind="presentation" modalPresentationStyle="fullScreen" id="J0h-ES-5eD"/>
+                                    <segue destination="nDZ-lA-v7p" kind="show" id="H8K-td-tDI"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
@@ -273,62 +273,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FM0-aA-AcS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SI6-dr-G61">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wE6-Zg-kyT">
-                                <rect key="frame" x="16" y="125" width="96" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sBj-LX-887">
+                                <rect key="frame" x="16" y="212" width="66" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOV-5c-tlt">
-                                <rect key="frame" x="120" y="194" width="239" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB7-GX-3IF">
+                                <rect key="frame" x="16" y="312" width="244" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nhc-T7-fV4">
+                                <rect key="frame" x="16" y="341" width="343" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Tweets"/>
+                                    <segment title="Following"/>
+                                    <segment title="Followers"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemTealColor"/>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ZA-hX-PET"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YdT-9T-CZK">
-                        <barButtonItem key="leftBarButtonItem" title="Home" id="toa-nX-PSu">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="HomeButton:" destination="nDZ-lA-v7p" id="BaA-Gp-WZJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="YdT-9T-CZK"/>
                     <connections>
-                        <outlet property="HomeButton" destination="toa-nX-PSu" id="OpH-VZ-TIJ"/>
-                        <outlet property="backdropView" destination="FM0-aA-AcS" id="ft8-Su-MzV"/>
-                        <outlet property="profileView" destination="wE6-Zg-kyT" id="Bpg-OV-R7I"/>
-                        <outlet property="username" destination="ZOV-5c-tlt" id="fpB-AF-26t"/>
+                        <outlet property="backdropView" destination="SI6-dr-G61" id="jP9-F2-wEY"/>
+                        <outlet property="profileImageView" destination="sBj-LX-887" id="wdo-gq-mCm"/>
+                        <outlet property="tabcontrol" destination="nhc-T7-fV4" id="P3M-3B-VYR"/>
+                        <outlet property="usernameLabel" destination="eB7-GX-3IF" id="Y9N-hd-FEQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBi-x8-zA3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1876" y="271.21439280359823"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="H6G-EX-Arq">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xrw-LF-HR7" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DNf-TI-wJw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemTealColor"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="nDZ-lA-v7p" kind="relationship" relationship="rootViewController" id="MQg-mp-H1h"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Zw-rc-csK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="936.79999999999995" y="271.21439280359823"/>
         </scene>
     </scenes>
     <resources>
