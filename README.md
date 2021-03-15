@@ -17,7 +17,7 @@ The following **required** functionality is completed:
 The following **bonus** features are implemented:
 
 - [x] When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 280) (2pts)
-- [ ] User can view their profile in a profile tab. (3pts)
+- [x] User can view their profile in a profile tab. (3pts)
 - [ ] User sees embedded images in tweet if available. (3pts)
 
 ## Video Walkthrough
@@ -25,7 +25,7 @@ The following **bonus** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/FWHwAAG4lZ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+<img src='http://g.recordit.co/ZOFevAHSe6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 Time spent: 5 hours spent in total
 # Twitter - Part I
 
